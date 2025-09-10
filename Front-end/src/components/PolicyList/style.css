@@ -1,0 +1,250 @@
+/* src/components/PolicyList/style.css */
+
+.policy-list-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+  overflow-x: auto; /* For responsive tables */
+}
+
+.policy-list-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.policy-list-title {
+  font-size: 1.8rem;
+  color: #334155; /* Darker text for titles */
+  margin: 0;
+}
+
+.policy-search-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.policy-search-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  min-width: 300px;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.policy-search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.policy-count {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.policy-message {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.policy-error-message {
+  text-align: center;
+  padding: 2rem;
+  color: #dc2626; /* Red for errors */
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.policy-retry-button {
+  background-color: #ef4444; /* Red button */
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.policy-retry-button:hover {
+  background-color: #dc2626;
+}
+
+.policy-table-wrapper {
+  max-height: 500px; /* Max height for scrollable table */
+  overflow-y: auto;
+}
+
+.policy-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.policy-table th,
+.policy-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0; /* Light border */
+}
+
+.policy-table th {
+  background-color: #f8fafc; /* Lighter header background */
+  color: #475569; /* Darker text for headers */
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.policy-table tbody tr:hover {
+  background-color: #f1f5f9; /* Hover effect for rows */
+}
+
+.policy-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.policy-actions-cell {
+  white-space: nowrap; /* Keep buttons on one line */
+}
+
+/* No Results Modal (theme-consistent) */
+.no-results-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.no-results-modal {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  max-width: 500px;
+  overflow: hidden;
+}
+
+.no-results-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.no-results-modal-header h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #1f2937;
+}
+
+.no-results-modal-close {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+}
+
+.no-results-modal-close:hover {
+  background-color: #f3f4f6;
+}
+
+.no-results-modal-content {
+  padding: 1.25rem;
+  color: #374151;
+}
+
+.no-results-modal-ok {
+  margin-top: 0.75rem;
+  background-color: #3b82f6;
+  color: #ffffff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.no-results-modal-ok:hover {
+  background-color: #2563eb;
+}
+
+/* Action button styles */
+.policy-view-button,
+.policy-edit-button,
+.policy-delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin: 0 0.25rem;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.policy-view-button:hover {
+  background-color: #dbeafe;
+  transform: scale(1.1);
+}
+
+.policy-edit-button:hover {
+  background-color: #fef3c7;
+  transform: scale(1.1);
+}
+
+.policy-delete-button:hover {
+  background-color: #fee2e2;
+  transform: scale(1.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .policy-list-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  .policy-list-header-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .policy-search-container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .policy-search-input {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .policy-table {
+    font-size: 0.9rem;
+  }
+  
+  .policy-table th,
+  .policy-table td {
+    padding: 8px 10px;
+  }
+}

@@ -1,0 +1,139 @@
+/* src/components/PolicyDetail/style.css */
+
+.policy-detail-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.policy-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.policy-detail-title {
+  font-size: 1.8rem;
+  color: #334155;
+  margin: 0;
+}
+
+.policy-detail-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.policy-detail-delete-button,
+.policy-detail-back-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.policy-detail-delete-button {
+  background-color: #ef4444;
+  color: white;
+}
+
+.policy-detail-delete-button:hover:not(:disabled) {
+  background-color: #dc2626;
+}
+
+.policy-detail-delete-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.policy-detail-back-button {
+  background-color: #6b7280;
+  color: white;
+}
+
+.policy-detail-back-button:hover {
+  background-color: #4b5563;
+}
+
+.policy-detail-content {
+  margin-top: 1rem;
+}
+
+.policy-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.policy-detail-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.policy-detail-field label {
+  font-weight: 600;
+  color: #374151;
+  font-size: 0.9rem;
+}
+
+.policy-detail-value {
+  padding: 0.75rem;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.policy-detail-loading {
+  text-align: center;
+  padding: 2rem;
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.policy-detail-error {
+  text-align: center;
+  padding: 2rem;
+  color: #dc2626;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.policy-detail-error .policy-detail-back-button {
+  margin-top: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .policy-detail-container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+  
+  .policy-detail-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .policy-detail-actions {
+    justify-content: center;
+  }
+  
+  .policy-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+} 

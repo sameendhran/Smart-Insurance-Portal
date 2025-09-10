@@ -1,0 +1,21 @@
+/* App.css */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #f4f7fa; /* Light background for the whole app */
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.App-content {
+    flex-grow: 1; /* Allows content area to take up remaining space */
+    padding: 20px;
+    /* This padding can be adjusted or removed if specific pages have their own layouts */
+}

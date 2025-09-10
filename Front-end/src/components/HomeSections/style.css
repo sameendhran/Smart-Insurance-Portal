@@ -1,0 +1,44 @@
+:root {
+  --brand-primary: #0b5fff;
+  --brand-primary-dark: #0a4fd3;
+  --home-hero-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=60');
+}
+
+/* Hero */
+.hm-hero {
+  background: radial-gradient(1200px 600px at 10% 10%, #f3f6ff 0%, #eef3ff 35%, #e9f0ff 60%, #e6edff 100%);
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+.hm-hero-inner { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 1.5rem; padding: 1.75rem; }
+.hm-hero-copy h1 { margin: 0 0 6px 0; font-size: 2rem; color: #0f172a; }
+.hm-hero-copy p { margin: 0 0 12px 0; color: #334155; }
+.hm-cta { display: flex; gap: 10px; }
+.hm-btn { border: 1px solid #cbd5e1; background: #fff; color: #0f172a; padding: 10px 14px; border-radius: 10px; cursor: pointer; }
+.hm-btn-primary { background: var(--brand-primary); color: #fff; border-color: var(--brand-primary); }
+.hm-btn:hover { filter: brightness(0.98); }
+.hm-hero-visual { border-radius: 12px; min-height: 320px; background-image: var(--home-hero-image); background-size: cover; background-position: center; border: 1px solid #e5e7eb; }
+
+/* Features */
+.hm-features { margin: 1.5rem 0; }
+.hm-features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.hm-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 14px; box-shadow: 0 6px 16px rgba(0,0,0,0.06); transition: transform .2s ease, box-shadow .2s ease; }
+.hm-card:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.1); }
+.hm-card-icon { font-size: 24px; margin-bottom: 6px; }
+.hm-card h3 { margin: 0 0 6px 0; color: #0f172a; }
+.hm-card p { margin: 0; color: #334155; }
+
+/* FAQ */
+.hm-faq { margin: 1.5rem 0; }
+.hm-faq h2 { margin: 0 0 10px 0; color: #0f172a; }
+.hm-faq-list { display: flex; flex-direction: column; gap: 8px; }
+.hm-faq-item { border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; overflow: hidden; }
+.hm-faq-q { display: flex; justify-content: space-between; width: 100%; background: #f8fafc; border: none; padding: 12px 14px; cursor: pointer; text-align: left; }
+.hm-faq-a { padding: 12px 14px; color: #334155; }
+
+@media (max-width: 900px) {
+  .hm-hero-inner { grid-template-columns: 1fr; }
+}
+
+

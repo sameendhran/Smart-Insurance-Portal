@@ -1,0 +1,184 @@
+/* Global Variables */
+:root {
+  --primary-color: #007bff; /* Vibrant Blue */
+  --secondary-color: #ffffff; /* White */
+  --accent-color: #f0f2f5; /* Light Grey Background */
+  --text-color: #2c3e50; /* Charcoal Grey for Text */
+  --font-family: 'Poppins', sans-serif;
+  --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft, subtle shadow */
+  --hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --border-color: #e2e8f0;
+}
+
+/* Homepage Container */
+.home-container {
+  max-width: 1400px; /* Slightly wider container */
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background-color: var(--accent-color);
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  min-height: 100vh; /* Ensures a full-height background */
+  box-sizing: border-box;
+  position: relative; /* for overlay */
+  z-index: 0;
+}
+
+/* Subtle white overlay to keep cards readable */
+.home-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Ensure content sits above the overlay */
+.home-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Page Header */
+.home-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: -1px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Navigation Cards */
+.home-navigation {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Slightly larger cards */
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.nav-section {
+  background-color: var(--secondary-color);
+  border-radius: 18px;
+  padding: 2.5rem;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nav-section:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+/* Section Titles and Subtitles */
+.nav-section h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color); /* Subtle underline effect */
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Nav Section Descriptions */
+.nav-description {
+  font-size: 0.95rem;
+  color: #475569;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.nav-section p.section-subtitle {
+  color: #7f8c8d; /* Muted subtitle color */
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Buttons */
+.nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: auto; /* Pushes buttons to the bottom of the card */
+}
+
+.nav-buttons button {
+  padding: 1.1rem 1.8rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-align: left; /* Left-aligns text for a cleaner look */
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-buttons button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.nav-buttons button:hover::before {
+  left: 0;
+}
+
+.nav-buttons button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Icons */
+.nav-buttons button span.icon {
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .home-container { padding: 2rem 1.5rem; }
+  .nav-section h2 { font-size: 1.6rem; }
+}
+
+@media (max-width: 768px) {
+  .home-container { padding: 1.5rem 1rem; }
+  .home-navigation { grid-template-columns: 1fr; }
+  .nav-section { padding: 2rem; }
+  .nav-buttons button { padding: 1rem 1.5rem; font-size: 1rem; }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nav-section:nth-child(1) { animation: slideInUp 0.6s ease-out; }
+.nav-section:nth-child(2) { animation: slideInUp 0.8s ease-out; }
+.nav-section:nth-child(3) { animation: slideInUp 1s ease-out; }
